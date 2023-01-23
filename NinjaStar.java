@@ -9,12 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class NinjaStar extends Actor
 {
     MyWorld world;
+    
     /**
      * Act - do whatever the NinjaStar wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
-    
+    int imageIndex = 0;
     public void act() 
     {
         // Ninja star heads towards the Ninja

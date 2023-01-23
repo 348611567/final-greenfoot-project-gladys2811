@@ -10,6 +10,7 @@ public class Ninja extends Actor
 {
     private int velocity;
     private final int GRAVITY = 1;
+    GreenfootSound jumpSound = new GreenfootSound("ninjajump.mp3");
     /**
      * Act - do whatever the Ninja wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -36,6 +37,7 @@ public class Ninja extends Actor
     public void jump()
     {
         velocity = - 20;
+        jumpSound.play();
     }
     
 }
