@@ -30,7 +30,7 @@ public class Ninja extends Actor
     public void fall()
     {
         setLocation(getX(), getY() + velocity);
-         if (getY() > getWorld().getHeight() - 30) velocity = 0;
+        if (getY() > getWorld().getHeight() - 30) velocity = 0;
         else velocity += GRAVITY;
     }
     
@@ -39,5 +39,4 @@ public class Ninja extends Actor
         velocity = - 20;
         jumpSound.play();
     }
-    
 }

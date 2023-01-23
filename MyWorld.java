@@ -8,9 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    SimpleTimer starTimer = new SimpleTimer();
     Label scoreLabel;
     int score = 1;
+    SimpleTimer starTimer = new SimpleTimer();
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,6 +21,22 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
+    }
+    
+    public void act()
+    {
+        createNinjaStar();
+    }
+    
+    public void createNinjaStar()
+    {
+        starTimer.mark();
+        if(starTimer.millisElapsed() > 500)
+        {
+            NinjaStar star = new NinjaStar();
+            addObject(star, 575, 369);
+            starTimer.mark();
+        }
     }
     
     /**
@@ -32,13 +49,5 @@ public class MyWorld extends World
         addObject(ninja,58,371);
         NinjaStar star = new NinjaStar();
         addObject(star, 575, 369);
-        Label scoreLabel = new Label(score, 60);
-        addObject(scoreLabel,24,30);
-    }
-    
-    public void addScore()
-    {
-        score++;
-        scoreLabel.setValue(score);
     }
 }
